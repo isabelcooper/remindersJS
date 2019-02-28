@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Notes from './components/notes';
 import './App.css';
 
@@ -8,7 +9,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <p> In app.js </p>
-          <Notes />
+            <Router>
+                <div>
+                <Switch>
+                    <Route path={"/notes"} component={Notes}/>
+                </Switch>
+                <button > <Link to={`/notes`}>Click Me</Link></button>
+                </div>
+            </Router>
         </header>
       </div>
     );
@@ -16,3 +24,4 @@ class App extends Component {
 }
 
 export default App;
+

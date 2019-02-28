@@ -4,24 +4,33 @@ import React, { Component } from "react";
 class Notes extends Component {
   constructor(props) {
     super(props);
-
-      this.state = {
-//      notes: []
+    this.state = {
+      notes: []
     };
   }
 
   componentDidMount() {
-    // fetch("http://localhost:5000/notes")
-    //   .then(response => response.json())
-    //   .then(spaces => {
-    //     this.setState({ notes: notes });
-    //   });
+    fetch("http://localhost:5432/notes")
+      .then(response => response.json())
+      .then(notes => {
+        this.setState({ notes: notes }); console.log(this.state)
+      });
   }
   render() {
-    // const { notes } = this.notes;
-    return (
-<div>  <h2>In notes file</h2></div>
-    );
+     const { notes } = this.state;
+     return (
+           <div><h2>In notes file</h2>
+               <p>
+                   {notes.map(eachNote => {
+                       return(
+                           <p>`string leading to {eachNote.header}`</p>
+                       )
+                   })}
+
+               </p>
+           </div>
+       );
+
   }
 }
 
