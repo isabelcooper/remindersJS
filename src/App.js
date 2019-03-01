@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Notes from './components/notes';
+import Home from './components/home';
 import './App.css';
 
 class App extends Component {
@@ -10,14 +11,12 @@ class App extends Component {
         <header className="App-header">
           <p> In app.js </p>
             <Router>
-                <div>
                 <Switch>
+                    <Route exact path={"/"} component={Home}/>
                     <Route path={"/notes"} component={Notes}/>
                 </Switch>
-                <button > <Link to={`/notes`}>Click Me</Link></button>
-                </div>
             </Router>
-        </header>
+          </header>
       </div>
     );
   }

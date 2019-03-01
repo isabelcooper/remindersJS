@@ -10,10 +10,10 @@ class Notes extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5432/notes")
+    fetch(`http://localhost:5432/notes`)
       .then(response => response.json())
       .then(notes => {
-        this.setState({ notes: notes }); console.log(this.state)
+        this.setState({ notes: notes });
       });
   }
   render() {
@@ -23,7 +23,7 @@ class Notes extends Component {
                <p>
                    {notes.map(eachNote => {
                        return(
-                           <p>`string leading to {eachNote.header}`</p>
+                           <p>string leading to {eachNote.header}</p>
                        )
                    })}
 
