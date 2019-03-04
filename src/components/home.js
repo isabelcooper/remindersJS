@@ -15,12 +15,9 @@ class Home extends Component {
     }
 
     logIn(event) {
-        // console.log("here")
         this.setState({
             loggedIn: true
         });
-        // console.log("state set");
-        // console.log(this.state)
     }
 
     render() {
@@ -32,7 +29,7 @@ class Home extends Component {
                 <div>
                     <h1> Welcome back</h1>
                     <button> <Link to={'/notes'}>See all notes</Link> </button>
-                    {/*<button> <Link to={'/notes/new'}>Create new note</Link> </button>*/}
+                    <button> <Link to={'/notes/new'}>Create new note</Link> </button>
                 </div>
                 )
         } else {
