@@ -19,18 +19,22 @@ class Notes extends Component {
   render() {
      const { notes } = this.state;
      return (
-           <div><h2>In notes file</h2>
+           <div><h2>All notes: </h2>
                <p>
                    {notes.map(eachNote => {
                        return(
-                           <p>string leading to {eachNote.header}</p>
+                           <div className="card text-white bg-primary mb-3" >
+                           <div className="card-header">Due: {eachNote.date}</div>
+                               <div className="card-body">
+                                   <h4 className="card-title">{eachNote.header}</h4>
+                                   <p className="card-text">{eachNote.body}</p>
+                               </div>
+                           </div>
                        )
                    })}
-
                </p>
            </div>
        );
-
   }
 }
 

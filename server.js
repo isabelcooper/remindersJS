@@ -33,6 +33,8 @@ app.get("/index", (req, res) => {
 });
 
 app.get('/notes', db.getNotes)
+app.get('/notes/:id', db.getNoteById)
+app.post('/notes/new', db.addNote)
 
 app.get("/", function(req, res) {
     console.log("hello world")
